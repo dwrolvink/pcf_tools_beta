@@ -11,7 +11,7 @@ ENV V_BOSH "7.0.1"
 RUN wget https://github.com/cloudfoundry/bosh-cli/releases/download/v${V_BOSH}/bosh-cli-${V_BOSH}-linux-amd64 -O /usr/local/bin/bosh && chmod +x /usr/local/bin/bosh
 RUN apt-get install -y ruby-full python3 python3-pip && pip3 install awscli --upgrade
 RUN wget https://releases.hashicorp.com/terraform/1.2.3/terraform_1.2.3_linux_amd64.zip && unzip terraform_1.2.3_linux_amd64.zip && mv terraform /usr/local/bin
-ENV V_YQ "4.25.3"
+ENV V_YQ "v4.25.3"
 RUN wget https://github.com/mikefarah/yq/releases/download/${V_YQ}/yq_linux_amd64 -O /usr/local/bin/yq && chmod +x /usr/local/bin/yq
 ENV V_PACK "0.27.0"
 RUN curl -sSL "https://github.com/buildpacks/pack/releases/download/v${V_PACK}/pack-v${V_PACK}-linux.tgz" | tar -C /usr/local/bin --no-same-owner -xzv pack
